@@ -46,12 +46,13 @@ const App = () => {
           onChange={handleSearch}
         />
       </header>
+      {searchTerm && <hr />} {/* Conditionally render the <hr /> element */}
       <div className="flag-grid">
         {filteredCountries.map(country => (
-          <div key={country.cca2} className="country-item">
+          <div key={country.cca2} className="countryCard">
             <img
               className="flag-img"
-              src={country.flags.svg}
+              src={country.flags.png}
               alt={`${country.name.common} flag`}
             />
             <span className="country-name">{country.name.common}</span>
